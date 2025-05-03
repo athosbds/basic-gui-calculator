@@ -69,7 +69,7 @@ button_16 = Button(frame_body, text="0", width=11, height=2, bg=colors['Cizenta'
 button_16.place(x=0, y=208)
 button_17 = Button(frame_body, text=".", width=5, height=2, bg=colors["Cizenta"], font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
 button_17.place(x=118, y=208)
-button_3 = Button(frame_body, text="/", width=5, height=2, bg=colors['Laranja'], fg=colors['Branca'], font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
+button_3 = Button(frame_body, text="=", width=5, height=2, bg=colors['Laranja'], fg=colors['Branca'], font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
 button_3.place(x=177, y=208)
 
 
