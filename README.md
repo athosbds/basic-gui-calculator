@@ -6,7 +6,7 @@ Este é um projeto simples de calculadora que desenvolvi com **Python**, usando 
 
 Aqui está um GIF da calculadora em funcionamento:
 
-![Calculadora em ação](assets/calculadora-py.gif)
+![Calculadora em ação](assets/calculadora_py.gif)
 
 ## 📌 Funcionalidades
 
