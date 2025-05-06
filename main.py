@@ -67,4 +67,4 @@ button("=", 177, 208, comando=lambda: calculate(text_var))
 
 
 window.mainloop()
-
+    
