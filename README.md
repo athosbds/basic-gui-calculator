@@ -1,6 +1,6 @@
 # 🧮 Calculadora em Python com Tkinter
 
-Este é um projeto simples de calculadora que desenvolvi com **Python**, usando a biblioteca **Tkinter** para criar a interface gráfica. A ideia surgiu acompanhando um vídeo do canal [Usando Python | João Futi Muanda](https://www.youtube.com/watch?v=i24MxljM-Bw&list=PLGFzROSPU9oVOK_4OojndjJggKV5ef1nQ), e fui adaptando o projeto ao meu jeito.
+Este é um projeto simples de calculadora que desenvolvi com **Python**, usando a biblioteca **Tkinter** para criar a interface gráfica. A ideia surgiu acompanhando um vídeo do canal [Usando Python | João Futi Muanda](https://www.youtube.com/watch?v=i24MxljM-Bw&list=PLGFzROSPU9oVOK_4OojndjJggKV5ef1nQ), e fui adaptando o projeto com funções.
 
 ## 🎥 Demonstração
 
@@ -24,9 +24,13 @@ Também tem:
 - Botão `C` para limpar
 - Botão `=` para mostrar o resultado
 
-## 🎨 Interface
 
-A interface é simples e intuitiva. Os botões têm cores que ajudam a identificar as operações, e o layout foi feito com carinho pra facilitar o uso. Além disso, o código está organizado em dois arquivos principais: um pra interface e outro pra lógica da calculadora.
+## 🚀 Como rodar
 
-## 📁 Estrutura de arquivos
+1. Tenha o Python instalado: https://www.python.org/
 
+2. Clone ou baixe o projeto:
+
+```bash
+git clone https://github.com/seuusuario/calculadora-tkinter.git
+cd calculadora-tkinter
