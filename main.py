@@ -1,6 +1,5 @@
 from tkinter import *
-from tkinter import ttk
-
+from calc_logic import insert_value, calculate, clear
 colors = {
     'Preta': "#3b3b3b",
     'Branca': "#FFFFFF",
@@ -14,66 +13,57 @@ window.title("Calculadora")
 window.geometry("235x310")
 window.config(bg=colors['Preta'])
 
+text_var = StringVar()
+
 # Frames
-frame_window = Frame(window, width=235, height=50, bg=colors['Azul'])
+frame_window = Frame(window, width=235, height=50, bg=colors['Preta'])
 frame_window.grid(row=0, column=0)
 
 frame_body = Frame(window, width=235, height=268)
 frame_body.grid(row=1, column=0)
 
+
+# LABEL
+
+layout_label = Label(frame_window, textvariable=text_var, width=16, height=2, padx=7, relief=FLAT, anchor="e", justify=RIGHT, font=('Ivy 18 '), bg=colors['Preta'], fg=colors['Branca'])
+layout_label.place(x=0, y=0)
+
+def button(first_text, x, y, comando=None, largura=5):
+    return Button(frame_body, text=first_text, width=largura, height=2, command=comando, bg=colors['Cizenta'] if first_text not in ['=', '+', 'x', '-', '÷'] else colors['Laranja'], fg=colors['Branca'] if first_text in ["=", "+", "-", "x", "÷"] else "black", font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE).place(x=x, y=y)
+
+
 # BOTÕES - PRIMEIRA FILEIRA
 
-button_1 = Button(frame_body, text="C", width=11, height=2, bg=colors['Cizenta'], font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-button_1.place(x=0, y=0)
-button_2 = Button(frame_body, text="%", width=5, height=2, bg=colors["Cizenta"], font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-button_2.place(x=118, y=0)
-button_3 = Button(frame_body, text="÷", width=5, height=2, bg=colors['Laranja'], fg=colors['Branca'], font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-button_3.place(x=177, y=0)
+button("C", 0, 0, comando=lambda: clear(text_var), largura=11)
+button("%", 118, 0, comando=lambda: insert_value("%", text_var))
+button("÷", 177, 0, comando=lambda: insert_value("÷", text_var))
 
 # BOTÕES - SEGUNDA FILEIRA
 
-button_4 = Button(frame_body, text="7", width=5, height=2, bg=colors["Cizenta"], font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-button_4.place(x=0, y=52)
-button_5 = Button(frame_body, text="8", width=5, height=2, bg=colors["Cizenta"], font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-button_5.place(x=59, y=52)
-button_6 = Button(frame_body, text="9", width=5, height=2, bg=colors["Cizenta"], font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-button_6.place(x=118, y=52)
-button_7 = Button(frame_body, text="x", width=5, height=2, bg=colors['Laranja'], fg=colors['Branca'], font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-button_7.place(x=177, y=52)
+button("7", 0, 52, comando=lambda: insert_value("7", text_var))
+button("8", 59, 52, comando=lambda: insert_value("8", text_var))
+button("9", 118, 52, comando=lambda: insert_value("9", text_var))
+button("x", 177, 52, comando=lambda: insert_value("x", text_var))
 
 #BOTÕES - TERCEIRA FILEIRA
 
-button_8 = Button(frame_body, text="4", width=5, height=2, bg=colors["Cizenta"], font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-button_8.place(x=0, y=104)
-button_9 = Button(frame_body, text="5", width=5, height=2, bg=colors["Cizenta"], font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-button_9.place(x=59, y=104)
-button_10 = Button(frame_body, text="6", width=5, height=2, bg=colors["Cizenta"], font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-button_10.place(x=118, y=104)
-button_11 = Button(frame_body, text="-", width=5, height=2, bg=colors['Laranja'], fg=colors['Branca'], font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-button_11.place(x=177, y=104)
+button("4", 0, 104, comando=lambda: insert_value("4", text_var))
+button("5", 59, 104, comando=lambda: insert_value("5", text_var))
+button("6", 118, 104, comando=lambda: insert_value("6", text_var))
+button("-", 177, 104, comando=lambda: insert_value("-", text_var))
 
 #BOTÕES - QUARTA FILEIRA
 
-button_12 = Button(frame_body, text="1", width=5, height=2, bg=colors["Cizenta"], font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-button_12.place(x=0, y=155)
-button_13 = Button(frame_body, text="2", width=5, height=2, bg=colors["Cizenta"], font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-button_13.place(x=59, y=155)
-button_14 = Button(frame_body, text="3", width=5, height=2, bg=colors["Cizenta"], font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-button_14.place(x=118, y=155)
-button_15 = Button(frame_body, text="+", width=5, height=2, bg=colors['Laranja'], fg=colors['Branca'], font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-button_15.place(x=177, y=155)
+button("1", 0, 155, comando=lambda: insert_value("1", text_var))
+button("2", 59, 155, comando=lambda: insert_value("2", text_var))
+button("3", 118, 155, comando=lambda: insert_value("3", text_var))
+button("+", 177, 155, comando=lambda: insert_value("+", text_var))
 
 # BOTÕES - QUINTA FILEIRA
 
-button_16 = Button(frame_body, text="0", width=11, height=2, bg=colors['Cizenta'], font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-button_16.place(x=0, y=208)
-button_17 = Button(frame_body, text=".", width=5, height=2, bg=colors["Cizenta"], font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-button_17.place(x=118, y=208)
-button_3 = Button(frame_body, text="=", width=5, height=2, bg=colors['Laranja'], fg=colors['Branca'], font=('Ivy 13 bold'), relief=RAISED, overrelief=RIDGE)
-button_3.place(x=177, y=208)
-
-
-
+button("0", 0, 208, comando=lambda: insert_value("0", text_var), largura=11)
+button(".", 118, 208, comando=lambda: insert_value(".", text_var))
+button("=", 177, 208, comando=lambda: calculate(text_var))
 
 
 window.mainloop()
