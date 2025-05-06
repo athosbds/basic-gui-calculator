@@ -2,11 +2,6 @@
 
 Este é um projeto simples de calculadora que desenvolvi com **Python**, usando a biblioteca **Tkinter** para criar a interface gráfica. A ideia surgiu acompanhando um vídeo do canal [Usando Python | João Futi Muanda](https://www.youtube.com/watch?v=i24MxljM-Bw&list=PLGFzROSPU9oVOK_4OojndjJggKV5ef1nQ), e fui adaptando o projeto com funções.
 
-## 🎥 Demonstração
-
-Aqui está um GIF da calculadora em funcionamento:
-
-![Calculadora em ação](assets/calculadora_py.gif)
 
 ## 📌 Funcionalidades
 
